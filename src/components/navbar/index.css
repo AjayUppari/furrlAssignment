@@ -1,0 +1,14 @@
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.navItem{
+    font-size: 25px;
+    color: #000000;
+    margin-right: 5px;
+}

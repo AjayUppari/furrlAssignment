@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
+import ProductList from "./components/productList";
+import ProductDetails from "./components/productDetails";
+import WishList from './components/cart'
+import CartContext from "./context";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    wishList: []
+  }
+
+  addToCart = (product) => {
+    console.log('wishlist add method called')
+    this.setState((prevState) => ({
+      wishList: [...prevState.wishList, product]
+    }))
+  }
+
+  render() {
+    const { wishList } = this.state
+    
+    return (
+      <CartContext.Provider value={{
+        wishList,
+        handleWishList: this.addToCart,
+      }} >
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route exact path="/productDetails/:id" component={ProductDetails} />
+          <Route exact path="/wishlist" component={WishList} />
+        </Switch>
+      </CartContext.Provider>
+    );
+  }
 }
 
 export default App;
