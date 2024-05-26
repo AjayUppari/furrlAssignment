@@ -64,6 +64,12 @@ class ProductsList extends Component {
     }
   };
 
+  onClickAddToWishList = (event, productDetails, handleWishList) => {
+    console.log(event)
+    event.stopPropagation()
+    handleWishList(productDetails)
+  }
+
   displayProducts = () => {
     const { productsList } = this.state;
 

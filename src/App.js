@@ -11,7 +11,7 @@ class App extends Component {
     wishList: []
   }
 
-  addToCart = (product) => {
+  addToWishList = (product) => {
     console.log('wishlist add method called')
     this.setState((prevState) => ({
       wishList: [...prevState.wishList, product]
@@ -24,8 +24,8 @@ class App extends Component {
     return (
       <CartContext.Provider value={{
         wishList,
-        handleWishList: this.addToCart,
-      }} >
+        handleWishList: this.addToWishList,
+      }}>
         <Switch>
           <Route exact path="/" component={ProductList} />
           <Route exact path="/productDetails/:id" component={ProductDetails} />
