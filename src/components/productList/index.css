@@ -8,7 +8,35 @@
 }
 
 .productItem{
-    width: '185px';
+    list-style-type: none;
+}
+
+.linkComponent{
     color: #000000;
     text-decoration: none;
+}
+
+.imageItem{
+    position: relative;
+}
+
+.productOptionsButton{
+    position: absolute;
+    right: 10px;
+    background-color: #4B5563;
+    border-radius: 25px;
+    color: #ffffff;
+    height: 35px;
+    border: none;
+    width: 35px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.wishlistButton{
+    bottom: 20px;
+}
+
+.shareButton{
+    bottom: 65px;
 }

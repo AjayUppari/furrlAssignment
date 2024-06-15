@@ -1,23 +1,11 @@
-import { Component } from "react"
-import CartContext from "../../context"
+import { Component } from "react";
 
-class WishList extends Component{
+class Cart extends Component{
     render(){
-        return(
-            <CartContext.Consumer>
-                {
-                    value => {
-                        const { wishList } = value
-                        console.log(wishList)
-
-                        return(
-                            <h1>wish List</h1>
-                        )
-                    }
-                }
-            </CartContext.Consumer>
+        return (
+            <h1>This is cart component</h1>
         )
     }
 }
 
-export default WishList
+export default Cart

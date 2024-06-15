@@ -2,6 +2,8 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../navbar";
 import { TbBookmark } from "react-icons/tb";
+import { FiShare } from "react-icons/fi";
+
 import CartContext from "../../context";
 import "./index.css";
 
@@ -65,10 +67,10 @@ class ProductsList extends Component {
   };
 
   onClickAddToWishList = (event, productDetails, handleWishList) => {
-    console.log(event)
-    event.stopPropagation()
-    handleWishList(productDetails)
-  }
+    console.log(event);
+    event.stopPropagation();
+    handleWishList(productDetails);
+  };
 
   displayProducts = () => {
     const { productsList } = this.state;
@@ -103,25 +105,30 @@ class ProductsList extends Component {
             }
 
             return (
-              <>
-                <Link
-                  to={`/productDetails/${eachItem.id}`}
-                  style={styles}
-                  key={eachItem.id}
-                  className="productItem"
-                >
-                  <img
-                    style={imageStyles}
-                    src={eachItem.images[0].src}
-                    alt="productImage"
-                  />
+              <li className="productItem" style={styles} key={index}>
+                <div className="imageItem">
+                  <Link className="linkComponent" to={`/productDetails/${eachItem.id}`}>
+                    <img
+                      style={imageStyles}
+                      src={eachItem.images[0].src}
+                      alt="productImage"
+                    />
+                  </Link>
                   <button
                     type="button"
                     onClick={() => handleWishList(eachItem)}
-                    className="productOptionsButton"
+                    className="productOptionsButton wishlistButton"
                   >
-                    <TbBookmark className="" />
+                    <TbBookmark />
                   </button>
+                  <button
+                    type="button"
+                    className="productOptionsButton shareButton"
+                  >
+                    <FiShare />
+                  </button>
+                </div>
+                <Link className="linkComponent" to={`/productDetails/${eachItem.id}`}>
                   <p>{eachItem.brand[0].name}</p>
                   <p>{eachItem.title}</p>
                   <p>
@@ -130,7 +137,7 @@ class ProductsList extends Component {
                     </span>
                   </p>
                 </Link>
-              </>
+              </li>
             );
           });
         }}
@@ -143,13 +150,13 @@ class ProductsList extends Component {
     return (
       <>
         <Navbar />
-        <div
+        <ul
           id="scrollContainer"
           onScroll={this.handleScroll}
           className="productsContainer"
         >
           {productsList.length > 0 && this.displayProducts()}
-        </div>
+        </ul>
       </>
     );
   }

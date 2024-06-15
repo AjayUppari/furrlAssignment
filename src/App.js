@@ -3,7 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import ProductList from "./components/productList";
 import ProductDetails from "./components/productDetails";
-import WishList from './components/cart'
+import WishList from './components/wishlist'
+import Cart from './components/cart'
 import CartContext from "./context";
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path="/" component={ProductList} />
           <Route exact path="/productDetails/:id" component={ProductDetails} />
           <Route exact path="/wishlist" component={WishList} />
+          <Route exact path="/cart" component={Cart} />
         </Switch>
       </CartContext.Provider>
     );
