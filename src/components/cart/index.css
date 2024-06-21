@@ -1,0 +1,37 @@
+.cartContainer{
+    padding: 15px;
+}
+
+.cartItems{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.cartProductImage{
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.cartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.removeFromCartBtn{
+    font-size: 25px;
+    background-color: #fff;
+    border: none;
+}
+
+.checkoutBtn{
+    background-color: #7e59e7;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+}

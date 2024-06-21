@@ -42,8 +42,6 @@ class ProductsList extends Component {
     let updatedData = this.state.productsList;
     updatedData = updatedData.concat(jsonData.data.getListingProducts.products);
 
-    console.log(updatedData);
-
     this.setState({
       productsList: updatedData,
     });
@@ -78,8 +76,7 @@ class ProductsList extends Component {
     return (
       <CartContext.Consumer>
         {(value) => {
-          const { handleWishList, wishList } = value;
-          console.log(wishList);
+          const { handleWishList } = value;
 
           return productsList.map((eachItem, index) => {
             let styles = {};
@@ -107,7 +104,7 @@ class ProductsList extends Component {
             return (
               <li className="productItem" style={styles} key={index}>
                 <div className="imageItem">
-                  <Link className="linkComponent" to={`/productDetails/${eachItem.id}`}>
+                  <Link className="linkComponent" to={`/productDetails/${eachItem.shopifyId}`}>
                     <img
                       style={imageStyles}
                       src={eachItem.images[0].src}

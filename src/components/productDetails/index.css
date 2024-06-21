@@ -1,0 +1,64 @@
+.productDetailsContent{
+    padding: 10px;
+}
+
+.productDetails{
+    width: 70%;
+}
+
+.productImage{
+    border-radius: 20px;
+}
+
+.price{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.pincodeInput{
+    width: 100%;
+    margin-left: 5px;
+    height: 30px;
+}
+
+.discountPercentage{
+    color: #47CD89;
+    border: solid 1px #47CD89;
+    padding: 2px;
+    height: 20px;
+    border-radius: 3px;
+    width: 45px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+.productActionsButtons{
+    background-color: white;
+    border: none;
+    font-size: 25px;
+}
+
+.addToCartBtnSection{
+    position: fixed;
+    bottom: 0;
+}
+
+.addToCartBtnSection{
+    position: fixed;
+    bottom: 0;
+}
+
+.addtoCartBtn{
+    width: 95vw;
+    border-radius: 20px;
+    background-color: #7e59e7;
+    color: #fff;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 50px;
+}
