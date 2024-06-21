@@ -18,10 +18,11 @@ class ProductsList extends Component {
   }
 
   fetchProducts = async () => {
+    const { pageNumber } = this.state
     const url = "https://api.furrl.in/api/v2/listing/getListingProducts";
     const bodyString = JSON.stringify({
       input: {
-        page: 1,
+        page: pageNumber,
         pageSize: 11,
         filters: [],
         id: "#HomeHunts",
@@ -42,9 +43,10 @@ class ProductsList extends Component {
     let updatedData = this.state.productsList;
     updatedData = updatedData.concat(jsonData.data.getListingProducts.products);
 
-    this.setState({
-      productsList: updatedData,
-    });
+    this.setState(prevState => ({
+      pageNumber: prevState.pageNumber + 1,
+      productsList: updatedData
+    }));
   };
 
   handleScroll = (event) => {
